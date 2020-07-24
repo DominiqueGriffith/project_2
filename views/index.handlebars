@@ -15,7 +15,7 @@
 
       <li>
         <button class="btn btn-warning" type="button" id="sign-up" class="btn btn-primary" data-toggle="modal"
-          data-target="#exampleModal" data-whatever="@mdo">Sign Up</button>
+          data-target="#signup" data-whatever="@mdo">Sign Up</button>
       </li>
     </ul>
     <ul class="nav navbar-right">
@@ -36,33 +36,34 @@
 </nav>
 
 {{!-- login modal --}}
-<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Please sign in </h5>
+          <h5 class="modal-title" id="loginModalLabel">Please sign in </h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          <form action="/api/login" method="POST">
+          {{!-- this is where login success status displays --}}
+          <div id="modal-msg"><p>Please enter your details</p></div>
+
+          <form>
             <div class="form-group">
               <label for="username" class="col-form-label">Username:</label>
-              <input type="text"  id="username" name="username">
+              <input type="text"  id="username">
             </div>
             <div class="form-group">
               <label for="password" class="col-form-label">Password:</label>
-              <input type="password" id="password" name="password">
+              <input type="password" id="password">
             </div>
-            <button class="btn btn-warning" type="submit" class="btn btn-primary form-submit" id="submit-route">Confirm</button>
-
           </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          
+          <button type="button" class="btn  btn-warning" id="login-button">Confirm</button>
         </div>
       </div>
     </div>
@@ -70,33 +71,33 @@
 
 
 {{!-- sign up modal --}}
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel"
   aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Please sign up </h5>
+        <h5 class="modal-title" id="signupModalLabel">Please sign up</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <form action="/api" method="POST">
+        {{!-- this is where signup success status displays --}}
+        <div id="modal2-msg"><p>Please enter your details</p></div>
+        <form>
           <div class="form-group">
             <label for="postUsername" class="col-form-label">Username:</label>
-            <input type="text" id="postUsername" name="postUsername">
+            <input type="text" id="postUsername">
           </div>
           <div class="form-group">
             <label for="postPassword" class="col-form-label">Password:</label>
-            <input type="password" id="postPassword" name="postPassword">
+            <input type="password" id="postPassword">
           </div>
-          <button type="submit" class="btn btn-warning">Submit</button>
-
-
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-warning" id="create-button">Submit</button>
       </div>
     </div>
   </div>
