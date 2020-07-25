@@ -1,0 +1,390 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Same Page</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#" data-toggle="modal" data-target="#login" data-whatever="@mdo">Log In <span
+            class="sr-only">(current)</span></a>
+      </li>
+
+      <li>
+        <button class="btn btn-warning" type="button" id="sign-up" class="btn btn-primary" data-toggle="modal"
+          data-target="#signup" data-whatever="@mdo">Sign Up</button>
+      </li>
+    </ul>
+    <ul class="nav navbar-right">
+      <!-- <div class="col-xs-4"> -->
+
+      <form id="searchbar" style="width: 500px; margin: auto;">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search by Author or Title" aria-label="Search">
+
+      </form>
+
+
+
+      <button class="btn btn-warning" class="btn btn-outline-success" type="submit">Search</button>
+      <!-- </div> -->
+    </ul>
+  </div>
+
+</nav>
+
+{{!-- login modal --}}
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">Please sign in </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          {{!-- this is where login success status displays --}}
+          <div id="modal-msg"><p>Please enter your details</p></div>
+
+          <form>
+            <div class="form-group">
+              <label for="username" class="col-form-label">Username:</label>
+              <input type="text"  id="username">
+            </div>
+            <div class="form-group">
+              <label for="password" class="col-form-label">Password:</label>
+              <input type="password" id="password">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn  btn-warning" id="login-button">Confirm</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+{{!-- sign up modal --}}
+<div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="signupModalLabel">Please sign up</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        {{!-- this is where signup success status displays --}}
+        <div id="modal2-msg"><p>Please enter your details</p></div>
+        <form>
+          <div class="form-group">
+            <label for="postUsername" class="col-form-label">Username:</label>
+            <input type="text" id="postUsername">
+          </div>
+          <div class="form-group">
+            <label for="postPassword" class="col-form-label">Password:</label>
+            <input type="password" id="postPassword">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-warning" id="create-button">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+    <!-- Suggest Book Modal -->
+    <div class="modal fade" id="book-suggest" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Book Suggestion</h5>
+                    <button type="button" class="close close-window" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="w-100"></div>
+                    <div class="row">
+                        <!-- <div class="row align-items-start"> -->
+                        <div class="col-md-6">
+                            <!-- image -->
+                            <img src="asset/BraveNewWorld.jpg" alt="music" class="img img-thumbnail" width="200px"
+                                height="200px">
+                        </div>
+
+
+
+                        <div class="col-md-6">
+                            <p id="searched-book-title">Brave New World </p>
+                            <p id="searched-book-author">By Aldus Huxley</p>
+                            <p id="searched-book-ISBN">ISBN: 978-0060850524</p>
+                        </div>
+                        <div class="col-md-12">
+                            <!-- <span id="bookone">Brave New World </span> -->
+                            <form>
+                                <div class="form-group">
+                                    <label for="message-text" class="col-form-label">Review:</label>
+                                    <textarea class="form-control" id="message-text"></textarea>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary close-window" data-dismiss="modal">Close</button>
+                    <a data-toggle="modal" id="confirm-book" href="#confirm-book-suggest"
+                        class="btn btn-primary">Confirm</a>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="confirm-book-suggest" data-backdrop="static">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Brave New World has been added</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="w-100"></div>
+
+                    <div class="row">
+                        <!-- <div class="row align-items-start"> -->
+                        <div class="col-md-6">
+                            <!-- image -->
+                            <img src="asset/BraveNewWorld.jpg" alt="music" class="img img-thumbnail" width="200px"
+                                height="200px">
+                        </div>
+
+
+
+                        <div class="col-md-6">
+                            <p id="searched-book-title">Brave New World </p>
+                            <p id="searched-book-author">By Aldus Huxley</p>
+                            <p id="searched-book-ISBN">ISBN: 978-0060850524</p>
+                        </div>
+
+                    </div>
+                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." -username</p>
+                </div>
+                <div class="modal-footer">
+                    
+                    <button type="button" class="btn btn-secondary close-window" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <div class="container">
+
+        <div class="w-100"></div>
+        <div class="row">
+            <div class="col-md-12">
+
+                <form class="bg-secondary" style="width: 500px" id="search-color">
+                    <input class="form-control mr-sm-2" type="search" placeholder="..user search.." aria-label="Search">
+                </form>
+                <h4>Your Search</h4>
+
+
+            </div>
+
+        </div>
+        <!-- Book search one -->
+        <div class="w-100"></div>
+        <div class="row">
+            <div class="col-md-1">
+                <img src="asset/BraveNewWorld.jpg" alt="music" class="img img-thumbnail" width="200px" height="200px">
+
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="searched-book" id="bookone-title-search">Brave New World </p>
+                    <p class="searched-book" id="bookone-author-search">By Aldus Huxley</p>
+                    <p class="searched-book" id="bookone-votes-search">Rating: 0</p>
+                    <button class="btn btn-warning" type="button" id="sign-up" class="btn btn-primary"
+                        data-toggle="modal" data-target="#book-suggest" data-whatever="@mdo">Suggest Book</button>
+                </div>
+            </div>
+
+        </div>
+        <div class="w-100"></div>
+        <div class="mb-4">
+            <!-- Solid divider -->
+            <hr class="solid">
+        </div>
+
+        <!-- Book search two -->
+        <div class="w-100"></div>
+        <div class="row">
+            <div class="col-md-1">
+                <img src="asset/BraveNewWorld.jpg" alt="music" class="img img-thumbnail" width="200px" height="200px">
+
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="searched-book" id="bookone-title-search">Brave New World </p>
+                    <p class="searched-book" id="bookone-author-search">By Aldus Huxley</p>
+                    <p class="searched-book" id="bookone-votes-search">Rating: 0</p>
+                    <button class="btn btn-warning" type="button" id="sign-up" class="btn btn-primary"
+                        data-toggle="modal" data-target="#book-suggest" data-whatever="@mdo">Suggest Book</button>
+                </div>
+            </div>
+
+        </div>
+        <div class="w-100"></div>
+        <div class="mb-4">
+            <!-- Solid divider -->
+            <hr class="solid">
+        </div>
+        <!-- Book search Three -->
+        <div class="w-100"></div>
+        <div class="row">
+            <div class="col-md-1">
+                <img src="asset/BraveNewWorld.jpg" alt="music" class="img img-thumbnail" width="200px" height="200px">
+
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="searched-book" id="bookone-title-search">Brave New World </p>
+                    <p class="searched-book" id="bookone-author-search">By Aldus Huxley</p>
+                    <p class="searched-book" id="bookone-votes-search">Rating: 0</p>
+                    <button class="btn btn-warning" type="button" id="sign-up" class="btn btn-primary"
+                        data-toggle="modal" data-target="#book-suggest" data-whatever="@mdo">Suggest Book</button>
+                </div>
+            </div>
+
+        </div>
+        <div class="w-100"></div>
+        <div class="mb-4">
+            <!-- Solid divider -->
+            <hr class="solid">
+        </div>
+        <!-- Book search Four -->
+        <div class="w-100"></div>
+        <div class="row">
+            <div class="col-md-1">
+                <img src="asset/BraveNewWorld.jpg" alt="music" class="img img-thumbnail" width="200px" height="200px">
+
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="searched-book" id="bookone-title-search">Brave New World </p>
+                    <p class="searched-book" id="bookone-author-search">By Aldus Huxley</p>
+                    <p class="searched-book" id="bookone-votes-search">Rating: 0</p>
+                    <button class="btn btn-warning" type="button" id="sign-up" class="btn btn-primary"
+                        data-toggle="modal" data-target="#book-suggest" data-whatever="@mdo">Suggest Book</button>
+                </div>
+            </div>
+
+        </div>
+        <div class="w-100"></div>
+        <div class="mb-4">
+            <!-- Solid divider -->
+            <hr class="solid">
+        </div>
+
+        <!-- Book search Five -->
+        <div class="w-100"></div>
+        <div class="row">
+            <div class="col-md-1">
+                <img src="asset/BraveNewWorld.jpg" alt="music" class="img img-thumbnail" width="200px" height="200px">
+
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="searched-book" id="bookone-title-search">Brave New World </p>
+                    <p class="searched-book" id="bookone-author-search">By Aldus Huxley</p>
+                    <p class="searched-book" id="bookone-votes-search">Rating: 0</p>
+                    <button class="btn btn-warning" type="button" id="sign-up" class="btn btn-primary"
+                        data-toggle="modal" data-target="#book-suggest" data-whatever="@mdo">Suggest Book</button>
+                </div>
+            </div>
+
+        </div>
+        <div class="w-100"></div>
+        <div class="mb-4">
+            <!-- Solid divider -->
+            <hr class="solid">
+        </div>
+
+        <!-- Book search Six -->
+        <div class="w-100"></div>
+        <div class="row">
+            <div class="col-md-1">
+                <img src="asset/BraveNewWorld.jpg" alt="music" class="img img-thumbnail" width="200px" height="200px">
+
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="searched-book" id="bookone-title-search">Brave New World </p>
+                    <p class="searched-book" id="bookone-author-search">By Aldus Huxley</p>
+                    <p class="searched-book" id="bookone-votes-search">Rating: 0</p>
+                    <button class="btn btn-warning" type="button" id="sign-up" class="btn btn-primary"
+                        data-toggle="modal" data-target="#book-suggest" data-whatever="@mdo">Suggest Book</button>
+                </div>
+            </div>
+
+        </div>
+        <div class="w-100"></div>
+        <div class="mb-4">
+            <!-- Solid divider -->
+            <hr class="solid">
+        </div>
+
+
+
+    </div>
+
+
+
+</body>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="/index.js"></script> -->
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $("#confirm-book").on("click", function () {
+            $("#book-suggest").hide();
+            $("#confirm-book-suggest").show();
+
+            //refreshes page when user clicks x or cancel or okay
+            $(".close-window").on("click", function () {
+                window.location.reload();
+            });
+        });
+
+    });
+
+</script>
+
+  {{!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> --}}
+  <script src="/js/index.js"></script>

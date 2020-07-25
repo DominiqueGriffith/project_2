@@ -15,7 +15,7 @@
 
       <li>
         <button class="btn btn-warning" type="button" id="sign-up" class="btn btn-primary" data-toggle="modal"
-          data-target="#signup" data-whatever="@mdo">Sign Up</button>
+          data-target="#exampleModal" data-whatever="@mdo">Sign Up</button>
       </li>
     </ul>
     <ul class="nav navbar-right">
@@ -36,34 +36,33 @@
 </nav>
 
 {{!-- login modal --}}
-<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel"
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="loginModalLabel">Please sign in </h5>
+          <h5 class="modal-title" id="exampleModalLabel">Please sign in </h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          {{!-- this is where login success status displays --}}
-          <div id="modal-msg"><p>Please enter your details</p></div>
-
-          <form>
+          <form action="/api/login" method="POST">
             <div class="form-group">
               <label for="username" class="col-form-label">Username:</label>
-              <input type="text"  id="username">
+              <input type="text"  id="username" name="username">
             </div>
             <div class="form-group">
               <label for="password" class="col-form-label">Password:</label>
-              <input type="password" id="password">
+              <input type="password" id="password" name="password">
             </div>
+            <button class="btn btn-warning" type="submit" class="btn btn-primary form-submit" id="submit-route">Confirm</button>
+
           </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn  btn-warning" id="login-button">Confirm</button>
+          
         </div>
       </div>
     </div>
@@ -71,33 +70,33 @@
 
 
 {{!-- sign up modal --}}
-<div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel"
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
   aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="signupModalLabel">Please sign up</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Please sign up </h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        {{!-- this is where signup success status displays --}}
-        <div id="modal2-msg"><p>Please enter your details</p></div>
-        <form>
+        <form action="/api" method="POST">
           <div class="form-group">
             <label for="postUsername" class="col-form-label">Username:</label>
-            <input type="text" id="postUsername">
+            <input type="text" id="postUsername" name="postUsername">
           </div>
           <div class="form-group">
             <label for="postPassword" class="col-form-label">Password:</label>
-            <input type="password" id="postPassword">
+            <input type="password" id="postPassword" name="postPassword">
           </div>
+          <button type="submit" class="btn btn-warning">Submit</button>
+
+
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-warning" id="create-button">Submit</button>
       </div>
     </div>
   </div>
@@ -117,33 +116,36 @@
   <!-- </div> -->
   <div class="w-100"></div>
   <div class="row">
+    <div id=></div>
+
+    </div>
     <!-- <div class="row align-items-start"> -->
-    <div class="col-md-3">
+    {{!-- <div class="col-md-3">
       <!-- image -->
-      {{!-- <img src="asset/BraveNewWorld.jpg" alt="music" class="img img-thumbnail" width="200px" height="200px"> --}}
+      <img src="asset/BraveNewWorld.jpg" alt="music" class="img img-thumbnail" width="200px" height="200px">
       <p id="bookone-title">Brave New World </p>
       <p id="bookone-author">By Aldus Huxley</p>
       <p id="bookone-votes">100</p>
 
       <!-- <span id="bookone">Brave New World </span> -->
-    </div>
+    </div> --}}
     <div class="col-md-3">
-      {{!-- <img src="asset/TheCatcher.jpg" alt="..." class="img-thumbnail" width="200px" height="200px"> --}}
+      {{!-- <img src="asset/TheCatcher.jpg" alt="..." class="img-thumbnail" width="200px" height="200px">
       <p id="booktwo-title">The Catcher in the Rye </p>
       <p id="booktwo-author">By J.D. Salinger </p>
       <p id="booktwo-votes">50 </p>
       <!-- <span id="booktwo">The Catcher in the Rye </span> -->
-    </div>
+    </div> --}}
     <div class="col-md-3">
-      {{!-- <img src="asset/Harrypotter.jp.jpg" alt="..." class="img-thumbnail" width="200px" height="100px"> --}}
+      {{!-- <img src="asset/Harrypotter.jp.jpg" alt="..." class="img-thumbnail" width="200px" height="100px">
       <p id="bookthree-title">Harry Potter and the Prisoner of Azkaban</p>
       <p id="bookthree-author">J.K. Rowling</p>
       <p id="bookthree-votes">30</p>
 
       <!-- <span id="bookthree">Harry Potter and the Prisoner of Azkaban </span> -->
-    </div>
+    </div> --}}
     <div class="col-md-3">
-      {{!-- <img src="asset/Sula.jpg" alt="..." class="img-thumbnail" width="200px" height="200px"> --}}
+      <img src="asset/Sula.jpg" alt="..." class="img-thumbnail" width="200px" height="200px">
       <p id="bookfour-title">Sula </p>
       <p id="bookfour-author">Toni Morrison</p>
       <p id="bookfour-votes">20</p>
@@ -169,5 +171,5 @@
     </div>
   </div>
 
-  {{!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> --}}
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="/js/index.js"></script>
