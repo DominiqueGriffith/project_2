@@ -15,6 +15,10 @@ module.exports = function(app) {
       res.redirect("/");
     }
   });
+  app.get("/search", function(req,res) {
+    res.render("search");
+  });
+
 
 
   // // Load index page

@@ -1,2 +1,163 @@
-<h1>Logged In</h1>
-<p>{{id}}</p>
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Same Page</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#" class="username">Welcome John Doe<span class="sr-only">(current)</span></a>
+            </li>
+
+        </ul>
+        <ul class="nav navbar-right">
+            <!-- <div class="col-xs-4"> -->
+
+            <form id="searchbar" style="width: 500px; margin: auto;">
+                <input id="booksearch" class="form-control mr-sm-2" type="search"
+                    placeholder="Search by Author or Title" aria-label="Search">
+
+            </form>
+
+
+
+            <button id="book-submit" class="btn btn-warning" class="btn btn-outline-success"
+                type="submit">Search</button>
+            <!-- </div> -->
+        </ul>
+    </div>
+
+</nav>
+
+
+
+<div class="container">
+    <!-- <div id="toppage"> -->
+    <div class="w-100"></div>
+    <div id="book-info">
+
+    </div>
+    <div class="row">
+        <!-- <div class="row align-items-start"> -->
+        <div class="col-md-12">
+            <h4>Top Rated Books of the Week</h4>
+
+        </div>
+    </div>
+    <!-- </div> -->
+    <div class="w-100"></div>
+    <div class="row">
+        <!-- <div class="row align-items-start"> -->
+        <div class="col-md-3">
+            <!-- image -->
+            {{!-- <img src="asset/BraveNewWorld.jpg" alt="music" class="img img-thumbnail" width="200px" height="200px">
+            <p id="bookone-title">Brave New World </p>
+            <p id="bookone-author">By Aldus Huxley</p>
+            <p id="bookone-votes">100</p> --}}
+
+            <!-- <span id="bookone">Brave New World </span> -->
+        </div>
+        <div class="col-md-3">
+            {{!-- <img src="asset/TheCatcher.jpg" alt="..." class="img-thumbnail" width="200px" height="200px"> --}}
+            <p id="booktwo-title">The Catcher in the Rye </p>
+            <p id="booktwo-author">By J.D. Salinger </p>
+            <p id="booktwo-votes">50 </p>
+            <!-- <span id="booktwo">The Catcher in the Rye </span> -->
+        </div>
+        <div class="col-md-3">
+            {{!-- <img src="asset/Harrypotter.jp.jpg" alt="..." class="img-thumbnail" width="200px" height="100px"> --}}
+            <p id="bookthree-title">Harry Potter and the Prisoner of Azkaban</p>
+            <p id="bookthree-author">J.K. Rowling</p>
+            <p id="bookthree-votes">30</p>
+
+            <!-- <span id="bookthree">Harry Potter and the Prisoner of Azkaban </span> -->
+        </div>
+        <div class="col-md-3">
+            {{!-- <img src="asset/Sula.jpg" alt="..." class="img-thumbnail" width="200px" height="200px"> --}}
+            <p id="bookfour-title">Sula </p>
+            <p id="bookfour-author">Toni Morrison</p>
+            <p id="bookfour-votes">20</p>
+            <!-- <span id="bookfour">Sula </span> -->
+        </div>
+
+
+    </div>
+
+    <div class="w-100"></div>
+
+
+
+    <div class="row">
+        <!-- <div class="row align-items-start"> -->
+        <div class="col-md-12">
+            <button class="btn btn-warning" class="btn btn-outline-success" type="submit">Top This
+                Year</button>
+
+
+            <button class="btn btn-warning" class="btn btn-outline-success" type="submit">Top This
+                Year</button>
+        </div>
+    </div>
+
+
+    <br>
+    <!-- </div> -->
+    <!-- </div> -->
+    <div class="w-100"></div>
+    <div class="row">
+        <!-- <div class="row align-items-start"> -->
+        <div class="col-md-12">
+            <h4>Your Top Books </h4>
+
+        </div>
+    </div>
+
+    <!-- </div> -->
+    <div class="w-100"></div>
+    <div class="row">
+        <!-- <div class="row align-items-start"> -->
+        <div class="col-md-3">
+            <!-- image -->
+            {{!-- <img src="asset/China.jpg" alt="music" class="img img-thumbnail" width="200px" height="200px"> --}}
+            <p id="user-bookone-title">China in 10 Words </p>
+            <p id="user-bookone-author">Hua Yu</p>
+            <p id="user-bookone-votes">1</p>
+            <!-- <span id="bookone">Brave New World </span> -->
+        </div>
+        <div class="col-md-3">
+            {{!-- <img src="asset/Sula.jpg" alt="..." class="img-thumbnail" width="200px" height="200px"> --}}
+            <p id="user-booktwo-title">Sula </p>
+            <p id="user-booktwo-author">Toni Morrison </p>
+            <p id="user-booktwo-votes">20</p>
+            <!-- <span id="bookfour">Sula </span> -->
+        </div>
+
+        <div class="col-md-3">
+            {{!-- <img src="asset/Animal.jpg" alt="..." class="img-thumbnail" width="200px" height="100px"> --}}
+            <p id="user-bookthree-title">Animal Farm</p>
+            <p id="user-bookthree-author">George Orwell</p>
+            <p id="user-bookthree-votes">19</p>
+            <!-- <span id="bookthree">Harry Potter and the Prisoner of Azkaban </span> -->
+        </div>
+
+
+        <div class="col-md-3">
+            {{!-- <img src="asset/TheCatcher.jpg" alt="..." class="img-thumbnail" width="200px" height="200px"> --}}
+            <p id="user-bookfour-title">The Catcher in the Rye </p>
+            <p id="user-bookfour-author">J.D. Salinger</p>
+            <p id="user-bookfour-votes">50</p>
+
+            <!-- <span id="booktwo">The Catcher in the Rye </span> -->
+        </div>
+
+    </div>
+    
+      {{!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> --}}
+  <script src="/js/index.js"></script>

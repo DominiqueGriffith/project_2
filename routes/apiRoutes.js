@@ -64,25 +64,63 @@ module.exports = function (app) {
 
   });
 
+  // book search
+  app.get("/api/search", function (req, res) {
+    var searchURL = "https://www.googleapis.com/books/v1/volumes?q=" + req.query.q + "&projection=lite&key=" + process.env.apiKey;
 
-  // // Get all examples
-  // app.get("/api/examples", function (req, res) {
-  //   db.Example.findAll({}).then(function (dbExamples) {
-  //     res.json(dbExamples);
-  //   });
-  // });
+    console.log("URL: " + searchURL);
 
-  // // Create a new example
-  // app.post("/api/examples", function (req, res) {
-  //   db.Example.create(req.body).then(function (dbExample) {
-  //     res.json(dbExample);
-  //   });
-  // });
+    axios.get(searchURL).then(function (result) {
+      // res.json(result.data);
 
-  // // Delete an example by id
-  // app.delete("/api/examples/:id", function (req, res) {
-  //   db.Example.destroy({ where: { id: req.params.id } }).then(function (dbExample) {
-  //     res.json(dbExample);
-  //   });
-  // });
+      console.log(result.data);
+
+      var bookArr = [];
+
+      for (var i = 0; i < 5; i++) {
+        var bookID = result.data.items[i].id;
+        var bookTitle = result.data.items[i].volumeInfo.title;
+        var authorArr = result.data.items[i].volumeInfo.authors;
+        var authors = authorArr.join(", ");
+        var bookImage = result.data.items[i].volumeInfo.imageLinks.thumbnail;
+
+        var bookObj = {
+          id: bookID,
+          title: bookTitle,
+          author: authors,
+          image: bookImage
+        };
+
+        bookArr.push(bookObj);
+
+      };
+
+      // console.log("new array: " + JSON.stringify(bookArr));
+      if (req.session.loggedin) {
+        var idAndBookObj = {
+          bookArr: bookArr,
+          userID: req.session.userID
+        }
+
+        res.json(idAndBookObj);
+      } else {
+        res.json(bookArr);
+      }
+    });
+  });
+// add book
+  app.post("/api/addbook", function (req,res) {
+    var userID = req.body.userID;
+    var bookID = req.body.bookID;
+
+    var postObj = {
+        userID: userID,
+        bookID: bookID
+    }
+    db.Book.create(postObj).then(function(result) {
+        res.json(result);
+
+    });
+});
+
 };
