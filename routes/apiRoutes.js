@@ -1,6 +1,7 @@
 var db = require("../models");
 var axios = require("axios");
 var crypto = require('crypto');
+const { sequelize } = require("../models");
 
 module.exports = function (app) {
   // Create account
@@ -108,34 +109,24 @@ module.exports = function (app) {
       }
     });
   });
-// add book
-  app.post("/api/addbook", function (req,res) {
-    var userID = req.body.userID;
-    var bookID = req.body.bookID;
-    
-    // var bookTitle = req.body.bookTitle;
-    // var authors = req.body.authors;
-    // var bookImage = req.body.bookImage;
+  // add book
+  app.post("/api/addbook", function (req, res) {
+
+    var UserId = req.body.userId;
+    var bookId = req.body.bookId;
+    var BookName = req.body.BookName;
 
     var postObj = {
-        userID: userID,
-        bookID: bookID
+      UserId: UserId,
+      bookId: bookId,
+      BookName: BookName
     }
 
-    
-    // var bookObjModal = {
-     
-    //   bookTitle: bookTitle,
-    //   authors: authors,
-    //   bookImage: bookImage
-    // };
+    db.Books.create(postObj).then(function (result) {
+      res.json(result);
 
-    console.log(postObj);
-    // console.log(req);
-    // db.Book.create(postObj).then(function(result) {
-    //     res.json(result);
+    })
 
-    // });
-});
+  });
 
 };
