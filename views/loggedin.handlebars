@@ -154,22 +154,7 @@
 
     </div>
 
-    {{!-- <div id="text-box">
-
-        </div> --}}
-
-
-
-    <div class="w-100"></div>
-
-    <!-- <div class="row align-items-start"> -->
-    {{!-- <div class="row">
-        <!-- <div class="row align-items-start"> -->
-        <div class="col-md-12">
-            <button class="btn btn-warning" class="btn btn-outline-success" type="submit">Top Book This Week
-                Year</button>
-  </div>
-    </div> --}}
+    
     <div class="row">
         <!-- <div class="row align-items-start"> -->
         <div class="col-md-12">
@@ -182,121 +167,20 @@
     <!-- </div> -->
     <div class="w-100"></div>
     <div class="row">
+        {{#each books}}
         <!-- <div class="row align-items-start"> -->
         <div class="col-md-3">
             <div id="top-week-one">
                 <!-- image -->
-                {{!-- <img src="asset/BraveNewWorld.jpg" alt="music" class="img img-thumbnail" width="200px" height="200px"> --}}
-                <p id="bookone-title">Brave New World </p>
-                <p id="bookone-author">By Aldus Huxley</p>
-                <p id="bookone-votes">100</p>
+                <img src="{{image}}" alt="{{title}} cover" class="img img-thumbnail">
+                <p id="bookone-title">{{title}}</p>
+                <p id="bookone-author">By {{author}}</p>
+                <p id="bookone-votes">Current Votes: {{vote}}</p>
             </div>
             <!-- <span id="bookone">Brave New World </span> -->
         </div>
-        <div class="col-md-3">
-            <div id="top-week-two">
-                {{!-- <img src="asset/TheCatcher.jpg" alt="..." class="img-thumbnail" width="200px" height="200px"> --}}
-                <p id="booktwo-title">The Catcher in the Rye </p>
-                <p id="booktwo-author">By J.D. Salinger </p>
-                <p id="booktwo-votes">50 </p>
-                <!-- <span id="booktwo">The Catcher in the Rye </span> -->
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div id="top-week-three">
-                {{!-- <img src="asset/Harrypotter.jp.jpg" alt="..." class="img-thumbnail" width="200px" height="100px"> --}}
-                <p id="bookthree-title">Harry Potter and the Prisoner of Azkaban</p>
-                <p id="bookthree-author">J.K. Rowling</p>
-                <p id="bookthree-votes">30</p>
-            </div>
-            <!-- <span id="bookthree">Harry Potter and the Prisoner of Azkaban </span> -->
-        </div>
-        <div class="col-md-3">
-            <div id="top-week-four">
-                {{!-- <img src="asset/Sula.jpg" alt="..." class="img-thumbnail" width="200px" height="200px"> --}}
-                <p id="bookfour-title">Sula </p>
-                <p id="bookfour-author">Toni Morrison</p>
-                <p id="bookfour-votes">20</p>
-                <!-- <span id="bookfour">Sula </span> -->
-            </div>
-        </div>
-
-
-    </div>
-
-    <div class="w-100"></div>
-
-
-
-    {{!--   
-<div class="row">
-    <div class="col-md-12">
-            <button class="btn btn-warning" class="btn btn-outline-success" type="submit"> Your Top Books</button>
-        </div>
-        </div>
-   --}}
-
-
-    <br>
-    <!-- </div> -->
-    <!-- </div> -->
-    <div class="w-100"></div>
-    <div class="row">
-        <!-- <div class="row align-items-start"> -->
-        <div class="col-md-12">
-            <h4>Your Top Books </h4>
-
-        </div>
-    </div>
-
-    <!-- </div> -->
-    <div class="w-100"></div>
-    <div class="row">
-        <!-- <div class="row align-items-start"> -->
-        <div class="col-md-3">
-            <div id="top-your-one">
-                <!-- image -->
-                {{!-- <img src="asset/China.jpg" alt="music" class="img img-thumbnail" width="200px" height="200px"> --}}
-                <p id="user-bookone-title">China in 10 Words </p>
-                <p id="user-bookone-author">Hua Yu</p>
-                <p id="user-bookone-votes">1</p>
-                <!-- <span id="bookone">Brave New World </span> -->
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div id="top-your-two">
-                {{!-- <img src="asset/Sula.jpg" alt="..." class="img-thumbnail" width="200px" height="200px"> --}}
-                <p id="user-booktwo-title">Sula </p>
-                <p id="user-booktwo-author">Toni Morrison </p>
-                <p id="user-booktwo-votes">20</p>
-                <!-- <span id="bookfour">Sula </span> -->
-            </div>
-        </div>
-
-        <div class="col-md-3">
-            <div id="top-your-three">
-                {{!-- <img src="asset/Animal.jpg" alt="..." class="img-thumbnail" width="200px" height="100px"> --}}
-                <p id="user-bookthree-title">Animal Farm</p>
-                <p id="user-bookthree-author">George Orwell</p>
-                <p id="user-bookthree-votes">19</p>
-                <!-- <span id="bookthree">Harry Potter and the Prisoner of Azkaban </span> -->
-            </div>
-        </div>
-
-
-        <div class="col-md-3">
-            <div id="top-your-four">
-                {{!-- <img src="asset/TheCatcher.jpg" alt="..." class="img-thumbnail" width="200px" height="200px"> --}}
-                <p id="user-bookfour-title">The Catcher in the Rye </p>
-                <p id="user-bookfour-author">J.D. Salinger</p>
-                <p id="user-bookfour-votes">50</p>
-
-                <!-- <span id="booktwo">The Catcher in the Rye </span> -->
-            </div>
-        </div>
-
-    </div>
-    <br>
+        {{/each}}
+        
 </div>
 {{!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> --}}
 <script src="/js/index.js"></script>
