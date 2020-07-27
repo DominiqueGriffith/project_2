@@ -14,6 +14,9 @@
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
                 <a class="nav-link" href="#" class="username">Welcome John Doe<span class="sr-only">(current)</span></a>
+            <li class="nav-item active">
+                <button class="btn btn-warning" type="button" id="sign-out">Sign Out</button>
+            </li>
             </li>
 
         </ul>
@@ -36,14 +39,137 @@
 
 </nav>
 
+<!-- Suggest Book Modal -->
+<div class="modal fade" id="add-book-info" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Book Suggestion</h5>
+                <button type="button" class="close close-window" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="w-100"></div>
+                <div class="row">
+                    <div id="book-info-modal">
+
+                    </div>
+                    <!-- <div class="row align-items-start"> -->
+                    {{!-- <div class="col-md-6">
+                            <!-- image -->
+                            <img src="asset/BraveNewWorld.jpg" alt="music" class="img img-thumbnail" width="200px"
+                                height="200px">
+                        </div>
+
+
+
+                        <div class="col-md-6">
+                            <p id="searched-book-title">Brave New World </p>
+                            <p id="searched-book-author">By Aldus Huxley</p>
+                            <p id="searched-book-ISBN">ISBN: 978-0060850524</p>
+                        </div> --}}
+                    <div class="col-md-12">
+                        <!-- <span id="bookone">Brave New World </span> -->
+                        <form>
+                            <div class="form-group">
+                                <p>Your review: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                    tempor incididunt ut
+                                    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                    ullamco
+                                    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                    reprehenderit in
+                                    voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                                    cupidatat
+                                    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                                    -username</p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary close-window" data-dismiss="modal">Close</button>
+                <a data-toggle="modal" id="confirm-book" href="#confirm-book-suggest"
+                    class="btn btn-primary">Confirm</a>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+{{!-- Vote Modal --}}
+
+<div class="modal fade" id="vote-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">You voted</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>'Book Title' got a vote</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 
 
 <div class="container">
-    <!-- <div id="toppage"> -->
+
     <div class="w-100"></div>
-    <div id="book-info">
+    <div class="row">
+        <div class="col-md-6">
+            <div id="user-Search"></div>
+        </div>
+        <br>
 
     </div>
+    <!-- <div id="toppage"> -->
+    <div class="w-100"></div>
+
+    <div class="row">
+        <div id="book-info">
+
+
+        </div>
+        {{!-- <div id="user-book-review">
+
+
+            </div> --}}
+
+
+    </div>
+
+    {{!-- <div id="text-box">
+
+        </div> --}}
+
+
+
+    <div class="w-100"></div>
+
+    <!-- <div class="row align-items-start"> -->
+    {{!-- <div class="row">
+        <!-- <div class="row align-items-start"> -->
+        <div class="col-md-12">
+            <button class="btn btn-warning" class="btn btn-outline-success" type="submit">Top Book This Week
+                Year</button>
+  </div>
+    </div> --}}
     <div class="row">
         <!-- <div class="row align-items-start"> -->
         <div class="col-md-12">
@@ -51,40 +177,48 @@
 
         </div>
     </div>
+
+
     <!-- </div> -->
     <div class="w-100"></div>
     <div class="row">
         <!-- <div class="row align-items-start"> -->
         <div class="col-md-3">
-            <!-- image -->
-            {{!-- <img src="asset/BraveNewWorld.jpg" alt="music" class="img img-thumbnail" width="200px" height="200px">
-            <p id="bookone-title">Brave New World </p>
-            <p id="bookone-author">By Aldus Huxley</p>
-            <p id="bookone-votes">100</p> --}}
-
+            <div id="top-week-one">
+                <!-- image -->
+                {{!-- <img src="asset/BraveNewWorld.jpg" alt="music" class="img img-thumbnail" width="200px" height="200px"> --}}
+                <p id="bookone-title">Brave New World </p>
+                <p id="bookone-author">By Aldus Huxley</p>
+                <p id="bookone-votes">100</p>
+            </div>
             <!-- <span id="bookone">Brave New World </span> -->
         </div>
         <div class="col-md-3">
-            {{!-- <img src="asset/TheCatcher.jpg" alt="..." class="img-thumbnail" width="200px" height="200px"> --}}
-            <p id="booktwo-title">The Catcher in the Rye </p>
-            <p id="booktwo-author">By J.D. Salinger </p>
-            <p id="booktwo-votes">50 </p>
-            <!-- <span id="booktwo">The Catcher in the Rye </span> -->
+            <div id="top-week-two">
+                {{!-- <img src="asset/TheCatcher.jpg" alt="..." class="img-thumbnail" width="200px" height="200px"> --}}
+                <p id="booktwo-title">The Catcher in the Rye </p>
+                <p id="booktwo-author">By J.D. Salinger </p>
+                <p id="booktwo-votes">50 </p>
+                <!-- <span id="booktwo">The Catcher in the Rye </span> -->
+            </div>
         </div>
         <div class="col-md-3">
-            {{!-- <img src="asset/Harrypotter.jp.jpg" alt="..." class="img-thumbnail" width="200px" height="100px"> --}}
-            <p id="bookthree-title">Harry Potter and the Prisoner of Azkaban</p>
-            <p id="bookthree-author">J.K. Rowling</p>
-            <p id="bookthree-votes">30</p>
-
+            <div id="top-week-three">
+                {{!-- <img src="asset/Harrypotter.jp.jpg" alt="..." class="img-thumbnail" width="200px" height="100px"> --}}
+                <p id="bookthree-title">Harry Potter and the Prisoner of Azkaban</p>
+                <p id="bookthree-author">J.K. Rowling</p>
+                <p id="bookthree-votes">30</p>
+            </div>
             <!-- <span id="bookthree">Harry Potter and the Prisoner of Azkaban </span> -->
         </div>
         <div class="col-md-3">
-            {{!-- <img src="asset/Sula.jpg" alt="..." class="img-thumbnail" width="200px" height="200px"> --}}
-            <p id="bookfour-title">Sula </p>
-            <p id="bookfour-author">Toni Morrison</p>
-            <p id="bookfour-votes">20</p>
-            <!-- <span id="bookfour">Sula </span> -->
+            <div id="top-week-four">
+                {{!-- <img src="asset/Sula.jpg" alt="..." class="img-thumbnail" width="200px" height="200px"> --}}
+                <p id="bookfour-title">Sula </p>
+                <p id="bookfour-author">Toni Morrison</p>
+                <p id="bookfour-votes">20</p>
+                <!-- <span id="bookfour">Sula </span> -->
+            </div>
         </div>
 
 
@@ -94,17 +228,13 @@
 
 
 
-    <div class="row">
-        <!-- <div class="row align-items-start"> -->
-        <div class="col-md-12">
-            <button class="btn btn-warning" class="btn btn-outline-success" type="submit">Top This
-                Year</button>
-
-
-            <button class="btn btn-warning" class="btn btn-outline-success" type="submit">Top This
-                Year</button>
+    {{!--   
+<div class="row">
+    <div class="col-md-12">
+            <button class="btn btn-warning" class="btn btn-outline-success" type="submit"> Your Top Books</button>
         </div>
-    </div>
+        </div>
+   --}}
 
 
     <br>
@@ -124,40 +254,49 @@
     <div class="row">
         <!-- <div class="row align-items-start"> -->
         <div class="col-md-3">
-            <!-- image -->
-            {{!-- <img src="asset/China.jpg" alt="music" class="img img-thumbnail" width="200px" height="200px"> --}}
-            <p id="user-bookone-title">China in 10 Words </p>
-            <p id="user-bookone-author">Hua Yu</p>
-            <p id="user-bookone-votes">1</p>
-            <!-- <span id="bookone">Brave New World </span> -->
+            <div id="top-your-one">
+                <!-- image -->
+                {{!-- <img src="asset/China.jpg" alt="music" class="img img-thumbnail" width="200px" height="200px"> --}}
+                <p id="user-bookone-title">China in 10 Words </p>
+                <p id="user-bookone-author">Hua Yu</p>
+                <p id="user-bookone-votes">1</p>
+                <!-- <span id="bookone">Brave New World </span> -->
+            </div>
         </div>
         <div class="col-md-3">
-            {{!-- <img src="asset/Sula.jpg" alt="..." class="img-thumbnail" width="200px" height="200px"> --}}
-            <p id="user-booktwo-title">Sula </p>
-            <p id="user-booktwo-author">Toni Morrison </p>
-            <p id="user-booktwo-votes">20</p>
-            <!-- <span id="bookfour">Sula </span> -->
+            <div id="top-your-two">
+                {{!-- <img src="asset/Sula.jpg" alt="..." class="img-thumbnail" width="200px" height="200px"> --}}
+                <p id="user-booktwo-title">Sula </p>
+                <p id="user-booktwo-author">Toni Morrison </p>
+                <p id="user-booktwo-votes">20</p>
+                <!-- <span id="bookfour">Sula </span> -->
+            </div>
         </div>
 
         <div class="col-md-3">
-            {{!-- <img src="asset/Animal.jpg" alt="..." class="img-thumbnail" width="200px" height="100px"> --}}
-            <p id="user-bookthree-title">Animal Farm</p>
-            <p id="user-bookthree-author">George Orwell</p>
-            <p id="user-bookthree-votes">19</p>
-            <!-- <span id="bookthree">Harry Potter and the Prisoner of Azkaban </span> -->
+            <div id="top-your-three">
+                {{!-- <img src="asset/Animal.jpg" alt="..." class="img-thumbnail" width="200px" height="100px"> --}}
+                <p id="user-bookthree-title">Animal Farm</p>
+                <p id="user-bookthree-author">George Orwell</p>
+                <p id="user-bookthree-votes">19</p>
+                <!-- <span id="bookthree">Harry Potter and the Prisoner of Azkaban </span> -->
+            </div>
         </div>
 
 
         <div class="col-md-3">
-            {{!-- <img src="asset/TheCatcher.jpg" alt="..." class="img-thumbnail" width="200px" height="200px"> --}}
-            <p id="user-bookfour-title">The Catcher in the Rye </p>
-            <p id="user-bookfour-author">J.D. Salinger</p>
-            <p id="user-bookfour-votes">50</p>
+            <div id="top-your-four">
+                {{!-- <img src="asset/TheCatcher.jpg" alt="..." class="img-thumbnail" width="200px" height="200px"> --}}
+                <p id="user-bookfour-title">The Catcher in the Rye </p>
+                <p id="user-bookfour-author">J.D. Salinger</p>
+                <p id="user-bookfour-votes">50</p>
 
-            <!-- <span id="booktwo">The Catcher in the Rye </span> -->
+                <!-- <span id="booktwo">The Catcher in the Rye </span> -->
+            </div>
         </div>
 
     </div>
-    
-      {{!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> --}}
-  <script src="/js/index.js"></script>
+    <br>
+</div>
+{{!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> --}}
+<script src="/js/index.js"></script>

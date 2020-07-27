@@ -112,15 +112,30 @@ module.exports = function (app) {
   app.post("/api/addbook", function (req,res) {
     var userID = req.body.userID;
     var bookID = req.body.bookID;
+    
+    // var bookTitle = req.body.bookTitle;
+    // var authors = req.body.authors;
+    // var bookImage = req.body.bookImage;
 
     var postObj = {
         userID: userID,
         bookID: bookID
     }
-    db.Book.create(postObj).then(function(result) {
-        res.json(result);
 
-    });
+    
+    // var bookObjModal = {
+     
+    //   bookTitle: bookTitle,
+    //   authors: authors,
+    //   bookImage: bookImage
+    // };
+
+    console.log(postObj);
+    // console.log(req);
+    // db.Book.create(postObj).then(function(result) {
+    //     res.json(result);
+
+    // });
 });
 
 };

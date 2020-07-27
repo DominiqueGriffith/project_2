@@ -102,73 +102,148 @@
   </div>
 </div>
 
+{{!-- Vote Modal --}}
+
+<div class="modal fade" id="vote-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">You voted</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>'Book Title' got a vote</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
 
 <div class="container">
-  <!-- <div id="toppage"> -->
-  <div class="w-100"></div>
-  <div class="row">
-    <!-- <div class="row align-items-start"> -->
-    <div class="col-md-12">
-      <h4>Top Rated Books of the Week</h4>
+
+    <div class="w-100"></div>
+    <div class="row">
+        <div class="col-md-6">
+            <div id="user-Search"></div>
+        </div>
+        <br>
 
     </div>
+    <!-- <div id="toppage"> -->
+    <div class="w-100"></div>
+
+    <div class="row">
+        <div id="book-info">
+
+
+        </div>
+            {{!-- <div id="user-book-review">
+
+
+            </div> --}}
+
+      
+         </div>
+       
+        {{!-- <div id="text-box">
+
+        </div> --}}
+
+   
+
+    <div class="w-100"></div>
+
+    <!-- <div class="row align-items-start"> -->
+          {{!-- <div class="row">
+        <!-- <div class="row align-items-start"> -->
+        <div class="col-md-12">
+            <button class="btn btn-warning" class="btn btn-outline-success" type="submit">Top Book This Week
+                Year</button>
   </div>
-  <!-- </div> -->
-  <div class="w-100"></div>
-  <div class="row">
-    <div id=></div>
-
-    </div>
-    <!-- <div class="row align-items-start"> -->
-     <div class="col-md-3">
-      <!-- image -->
-      <p id="bookone-title">Brave New World </p>
-      <p id="bookone-author">By Aldus Huxley</p>
-      <p id="bookone-votes">100</p>
-
-      <!-- <span id="bookone">Brave New World </span> -->
-    </div> 
-    <div class="col-md-3">
-      {{!-- <img src="asset/TheCatcher.jpg" alt="..." class="img-thumbnail" width="200px" height="200px">
-      <p id="booktwo-title">The Catcher in the Rye </p>
-      <p id="booktwo-author">By J.D. Salinger </p>
-      <p id="booktwo-votes">50 </p>
-      <!-- <span id="booktwo">The Catcher in the Rye </span> -->
     </div> --}}
-    <div class="col-md-3">
-      {{!-- <img src="asset/Harrypotter.jp.jpg" alt="..." class="img-thumbnail" width="200px" height="100px">
-      <p id="bookthree-title">Harry Potter and the Prisoner of Azkaban</p>
-      <p id="bookthree-author">J.K. Rowling</p>
-      <p id="bookthree-votes">30</p>
+    <div class="row">
+        <!-- <div class="row align-items-start"> -->
+        <div class="col-md-12">
+            <h4>Top Rated Books of the Week</h4>
 
-      <!-- <span id="bookthree">Harry Potter and the Prisoner of Azkaban </span> -->
-    </div> --}}
-    <div class="col-md-3">
-      <img src="asset/Sula.jpg" alt="..." class="img-thumbnail" width="200px" height="200px">
-      <p id="bookfour-title">Sula </p>
-      <p id="bookfour-author">Toni Morrison</p>
-      <p id="bookfour-votes">20</p>
-      <!-- <span id="bookfour">Sula </span> -->
+        </div>
     </div>
 
 
-  </div>
+    <!-- </div> -->
+    <div class="w-100"></div>
+    <div class="row">
+        <!-- <div class="row align-items-start"> -->
+        <div class="col-md-3">
+            <div id="top-week-one">
+            <!-- image -->
+             {{!-- <img src="asset/BraveNewWorld.jpg" alt="music" class="img img-thumbnail" width="200px" height="200px"> --}}
+            <p id="bookone-title">Brave New World </p>
+            <p id="bookone-author">By Aldus Huxley</p>
+            <p id="bookone-votes">100</p>
+</div>
+            <!-- <span id="bookone">Brave New World </span> -->
+        </div>
+        <div class="col-md-3">
+            <div id="top-week-two">
+            {{!-- <img src="asset/TheCatcher.jpg" alt="..." class="img-thumbnail" width="200px" height="200px"> --}}
+            <p id="booktwo-title">The Catcher in the Rye </p>
+            <p id="booktwo-author">By J.D. Salinger </p>
+            <p id="booktwo-votes">50 </p>
+            <!-- <span id="booktwo">The Catcher in the Rye </span> -->
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div id="top-week-three">
+            {{!-- <img src="asset/Harrypotter.jp.jpg" alt="..." class="img-thumbnail" width="200px" height="100px"> --}}
+            <p id="bookthree-title">Harry Potter and the Prisoner of Azkaban</p>
+            <p id="bookthree-author">J.K. Rowling</p>
+            <p id="bookthree-votes">30</p>
+</div>
+            <!-- <span id="bookthree">Harry Potter and the Prisoner of Azkaban </span> -->
+        </div>
+        <div class="col-md-3">
+             <div id="top-week-four">
+            {{!-- <img src="asset/Sula.jpg" alt="..." class="img-thumbnail" width="200px" height="200px"> --}}
+            <p id="bookfour-title">Sula </p>
+            <p id="bookfour-author">Toni Morrison</p>
+            <p id="bookfour-votes">20</p>
+            <!-- <span id="bookfour">Sula </span> -->
+            </div>
+        </div>
 
-  <div class="w-100"></div>
+
+    </div>
+
+    <div class="w-100"></div>
 
 
 
-  <div class="row">
-    <!-- <div class="row align-items-start"> -->
+{{!--   
+<div class="row">
     <div class="col-md-12">
-      <button class="btn btn-warning" class="btn btn-outline-success" type="submit">Top This
-        Year</button>
+            <button class="btn btn-warning" class="btn btn-outline-success" type="submit"> Your Top Books</button>
+        </div>
+        </div>
+   --}}
 
 
-      <button class="btn btn-warning" class="btn btn-outline-success" type="submit">Top This
-        Year</button>
-    </div>
-  </div>
+    <br>
+    <!-- </div> -->
+    <!-- </div> -->
+    <div class="w-100"></div>
+ 
+</div>
 
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="/js/index.js"></script>
