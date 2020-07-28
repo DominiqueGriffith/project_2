@@ -9,7 +9,12 @@ module.exports = function(app) {
   });
 
   app.get("/loggedin", function(req,res) {
-    res.send("TESTING LOGGEDIN");
+    if (req.session.loggedin) {
+      res.send("TESTING LOGGEDIN = logged in");
+    } else {
+      res.send("ESTING LOGGEDIN = NOT logged in")
+    }
+    
     // if (req.session.loggedin) {
     //   // Render home page
     //   db.Books.findAll({
