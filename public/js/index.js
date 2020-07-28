@@ -291,6 +291,22 @@ $("#book-submit").on("click", function () {
   });
 });
 
+$(document).on("click",".vote-button", function() {
+  var googleId = $(this).data("googleid");
+
+  $.ajax({
+      type: "PUT",
+      url: "/api/vote",
+      data: {
+          googleId: googleId
+      }
+  }).then(function (response) {
+      console.log(response);
+      window.location.href="/loggedin";
+      
+  });
+});
+
 $(document).on("click", ".add-book", function () {
   var userId = $(this).data("user_id");
   var bookId = $(this).data("book_id");
