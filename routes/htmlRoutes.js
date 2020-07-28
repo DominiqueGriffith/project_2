@@ -9,95 +9,95 @@ module.exports = function(app) {
   });
 
   app.get("/loggedin", function(req,res) {
+    res.send("TESTING LOGGEDIN");
+    // if (req.session.loggedin) {
+    //   // Render home page
+    //   db.Books.findAll({
+    //     order: sequelize.literal("vote DESC")
+    //   }).then(function (results) {
+    //     // console.log(results);
+    //     var bookVoteArr = [];
 
-    if (req.session.loggedin) {
-      // Render home page
-      db.Books.findAll({
-        order: sequelize.literal("vote DESC")
-      }).then(function (results) {
-        // console.log(results);
-        var bookVoteArr = [];
+    //     var counter = 0;
 
-        var counter = 0;
+    //     function cycleGoogleBook() {
+    //       if (counter < (results.length) - 1) {
+    //         var bookVoteId = results[counter].bookId;
+    //         var voteTotal = results[counter].vote;
+    //         var searchURL = "https://www.googleapis.com/books/v1/volumes/" + bookVoteId + "?key=" + process.env.apiKey;
 
-        function cycleGoogleBook() {
-          if (counter < (results.length) - 1) {
-            var bookVoteId = results[counter].bookId;
-            var voteTotal = results[counter].vote;
-            var searchURL = "https://www.googleapis.com/books/v1/volumes/" + bookVoteId + "?key=" + process.env.apiKey;
-
-            axios.get(searchURL).then(function (result) {
-              // res.json(result.data);
-
-
-
-              var bookID = result.data.id;
-              var bookTitle = result.data.volumeInfo.title;
-              var authorArr = result.data.volumeInfo.authors;
-              var authors = authorArr.join(", ");
-              var bookImage = result.data.volumeInfo.imageLinks.thumbnail;
-
-              var bookObj = {
-                id: bookID,
-                title: bookTitle,
-                author: authors,
-                image: bookImage,
-                vote: voteTotal
-              };
-
-              console.log("this is book obj: " + JSON.stringify(bookObj));
-              bookVoteArr.push(bookObj);
-              counter += 1;
-              cycleGoogleBook();
-            });
-
-          } else {
-
-            var bookVoteId = results[counter].bookId;
-            var voteTotal = results[counter].vote;
-            var searchURL = "https://www.googleapis.com/books/v1/volumes/" + bookVoteId + "?key=" + process.env.apiKey;
-
-            axios.get(searchURL).then(function (result) {
-              // res.json(result.data);
+    //         axios.get(searchURL).then(function (result) {
+    //           // res.json(result.data);
 
 
 
-              var bookID = result.data.id;
-              var bookTitle = result.data.volumeInfo.title;
-              var authorArr = result.data.volumeInfo.authors;
-              var authors = authorArr.join(", ");
-              var bookImage = result.data.volumeInfo.imageLinks.thumbnail;
+    //           var bookID = result.data.id;
+    //           var bookTitle = result.data.volumeInfo.title;
+    //           var authorArr = result.data.volumeInfo.authors;
+    //           var authors = authorArr.join(", ");
+    //           var bookImage = result.data.volumeInfo.imageLinks.thumbnail;
 
-              var bookObj = {
-                id: bookID,
-                title: bookTitle,
-                author: authors,
-                image: bookImage,
-                vote: voteTotal
-              };
+    //           var bookObj = {
+    //             id: bookID,
+    //             title: bookTitle,
+    //             author: authors,
+    //             image: bookImage,
+    //             vote: voteTotal
+    //           };
 
-              console.log("this is book obj: " + JSON.stringify(bookObj));
-              bookVoteArr.push(bookObj);
+    //           console.log("this is book obj: " + JSON.stringify(bookObj));
+    //           bookVoteArr.push(bookObj);
+    //           counter += 1;
+    //           cycleGoogleBook();
+    //         });
 
-              console.log("this is the book arr: " + bookVoteArr);
-              var hbsObject = {
-                books: bookVoteArr
-              }
-              res.render("loggedin", hbsObject);
+    //       } else {
+
+    //         var bookVoteId = results[counter].bookId;
+    //         var voteTotal = results[counter].vote;
+    //         var searchURL = "https://www.googleapis.com/books/v1/volumes/" + bookVoteId + "?key=" + process.env.apiKey;
+
+    //         axios.get(searchURL).then(function (result) {
+    //           // res.json(result.data);
 
 
-            });
 
-          }
-        }
+    //           var bookID = result.data.id;
+    //           var bookTitle = result.data.volumeInfo.title;
+    //           var authorArr = result.data.volumeInfo.authors;
+    //           var authors = authorArr.join(", ");
+    //           var bookImage = result.data.volumeInfo.imageLinks.thumbnail;
 
-        cycleGoogleBook();
+    //           var bookObj = {
+    //             id: bookID,
+    //             title: bookTitle,
+    //             author: authors,
+    //             image: bookImage,
+    //             vote: voteTotal
+    //           };
 
-      });
-    } else {
-      // Redirect to login page
-      res.redirect("/");
-    }
+    //           console.log("this is book obj: " + JSON.stringify(bookObj));
+    //           bookVoteArr.push(bookObj);
+
+    //           console.log("this is the book arr: " + bookVoteArr);
+    //           var hbsObject = {
+    //             books: bookVoteArr
+    //           }
+    //           res.render("loggedin", hbsObject);
+
+
+    //         });
+
+    //       }
+    //     }
+
+    //     cycleGoogleBook();
+
+    //   });
+    // } else {
+    //   // Redirect to login page
+    //   res.redirect("/");
+    // }
 
 
 
