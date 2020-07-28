@@ -53,6 +53,7 @@ module.exports = function (app) {
         if (results.length > 0) {
           req.session.loggedin = true;
           req.session.userID = results[0].id;
+          req.session.username = results[0].username;
           res.send("userLoggedIn");
         } else {
           res.send("wrongPassOrUser");
