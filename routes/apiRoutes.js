@@ -65,6 +65,22 @@ module.exports = function (app) {
 
   });
 
+  // vote for book
+  app.put("/api/vote", function(req,res) {
+    console.log("googleid: " + req.body.googleId);
+
+    db.Books.update({
+        vote: sequelize.literal("vote + 1")
+    }, {
+        where: {
+            bookId: req.body.googleId
+        }
+    }).then(function(result) {
+        console.log(result);
+        res.json(result);
+    });
+});
+
   // book search
   app.get("/api/search", function (req, res) {
     var searchURL = "https://www.googleapis.com/books/v1/volumes?q=" + req.query.q + "&projection=lite&key=" + process.env.apiKey;
