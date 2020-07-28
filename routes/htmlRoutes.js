@@ -10,7 +10,7 @@ module.exports = function(app) {
 
   app.get("/loggedin", function(req,res) {
     if (req.session.loggedin) {
-      res.send("TESTING LOGGEDIN = logged in");
+      res.render("loggedin");
     } else {
       res.send("ESTING LOGGEDIN = NOT logged in")
     }
