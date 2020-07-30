@@ -84,7 +84,7 @@ module.exports = function (app) {
 
   // book search
   app.get("/api/search", function (req, res) {
-    var searchURL = "https://www.googleapis.com/books/v1/volumes?q=" + req.query.q + "&projection=lite&country=US&key=" + process.env.apiKey;
+    var searchURL = "https://www.googleapis.com/books/v1/volumes?q=" + req.query.q + "&projection=lite&key=" + process.env.apiKey;
 
     console.log("URL: " + searchURL);
 

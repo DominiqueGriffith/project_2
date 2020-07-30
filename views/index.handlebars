@@ -1,6 +1,6 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Same Page</a>
+  <a class="navbar-brand" id="page-title" href="#">Same Page</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -18,7 +18,7 @@
           data-target="#signup" data-whatever="@mdo">Sign Up</button>
       </li>
     </ul>
-    <ul class="nav navbar-right">
+    {{!-- <ul class="nav navbar-right">
       <!-- <div class="col-xs-4"> -->
 
       <form id="searchbar" style="width: 500px; margin: auto;">
@@ -30,7 +30,7 @@
 
       <button class="btn btn-warning" class="btn btn-outline-success" type="submit">Search</button>
       <!-- </div> -->
-    </ul>
+    </ul> --}}
   </div>
 
 </nav>
@@ -117,7 +117,6 @@
   <!-- </div> -->
   <div class="w-100"></div>
   <div class="row">
-    <div class="row">
         {{#each books}}
         <!-- <div class="row align-items-start"> -->
         <div class="col-md-3">

@@ -1,3 +1,7 @@
 .list-group-item {
   line-height: 2.5;
 }
+
+#page-title {
+    font-family: 'Pacifico', cursive;
+}
